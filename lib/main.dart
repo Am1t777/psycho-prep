@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'models/score_entry.dart';
 import 'services/data_service.dart';
 import 'services/progress_service.dart';
+import 'tab_notifier.dart';
 import 'features/home/quick_launch_screen.dart';
 import 'features/vocabulary/deck_picker_screen.dart';
 import 'features/practice/subject_picker_screen.dart';
@@ -13,7 +14,6 @@ import 'features/math_sprint/sprint_hub_screen.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Hive init
   await Hive.initFlutter();
   Hive.registerAdapter(ScoreEntryAdapter());
   await Future.wait([
@@ -22,7 +22,6 @@ Future<void> main() async {
     Hive.openBox('practice_stats'),
   ]);
 
-  // Load content
   final dataService = DataService();
   await dataService.load();
 
@@ -31,6 +30,7 @@ Future<void> main() async {
       providers: [
         Provider<DataService>.value(value: dataService),
         Provider<ProgressService>(create: (_) => ProgressService()),
+        ChangeNotifierProvider(create: (_) => TabNotifier()),
       ],
       child: const PsychoPrepApp(),
     ),
@@ -75,15 +75,8 @@ class PsychoPrepApp extends StatelessWidget {
   }
 }
 
-class MainShell extends StatefulWidget {
+class MainShell extends StatelessWidget {
   const MainShell({super.key});
-
-  @override
-  State<MainShell> createState() => _MainShellState();
-}
-
-class _MainShellState extends State<MainShell> {
-  int _currentIndex = 0;
 
   static const _screens = [
     QuickLaunchScreen(),
@@ -94,11 +87,12 @@ class _MainShellState extends State<MainShell> {
 
   @override
   Widget build(BuildContext context) {
+    final tab = context.watch<TabNotifier>();
     return Scaffold(
-      body: _screens[_currentIndex],
+      body: _screens[tab.index],
       bottomNavigationBar: NavigationBar(
-        selectedIndex: _currentIndex,
-        onDestinationSelected: (i) => setState(() => _currentIndex = i),
+        selectedIndex: tab.index,
+        onDestinationSelected: (i) => context.read<TabNotifier>().setTab(i),
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home), label: 'Home'),
           NavigationDestination(icon: Icon(Icons.edit_outlined), selectedIcon: Icon(Icons.edit), label: 'Practice'),
