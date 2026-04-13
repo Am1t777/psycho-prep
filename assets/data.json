@@ -1,0 +1,96 @@
+{
+  "hebrew_vocab": [
+    {
+      "id": "heb_001",
+      "word": "אֶפְרָתִי",
+      "definition": "חולף במהרה, זמני, שאינו נמשך לאורך זמן",
+      "example": "חוויה אפרתית שנשכחת מהר",
+      "level": "hard",
+      "category": "adjectives"
+    },
+    {
+      "id": "heb_002",
+      "word": "נַחְרָץ",
+      "definition": "החלטי, ברור וסופי, שאין לערער עליו",
+      "example": "הוצאה לפועל של גזר דין נחרץ",
+      "level": "medium",
+      "category": "adjectives"
+    },
+    {
+      "id": "heb_003",
+      "word": "עֲנֵוָה",
+      "definition": "צניעות, חוסר יומרה, הכרה בגבולות עצמו",
+      "example": "הוא קיבל את השבח בענווה רבה",
+      "level": "easy",
+      "category": "nouns"
+    }
+  ],
+  "english_vocab": [
+    {
+      "id": "eng_001",
+      "word": "Ephemeral",
+      "definition": "Lasting for a very short time",
+      "example": "The beauty of cherry blossoms is ephemeral.",
+      "level": "hard",
+      "category": "adjectives"
+    },
+    {
+      "id": "eng_002",
+      "word": "Concise",
+      "definition": "Giving a lot of information clearly using few words",
+      "example": "Please give a concise summary of the article.",
+      "level": "easy",
+      "category": "adjectives"
+    },
+    {
+      "id": "eng_003",
+      "word": "Ambiguous",
+      "definition": "Open to more than one interpretation; not clear",
+      "example": "The instructions were ambiguous and confused everyone.",
+      "level": "medium",
+      "category": "adjectives"
+    }
+  ],
+  "questions": [
+    {
+      "id": "hv_001",
+      "type": "analogy",
+      "subject": "hebrew_verbal",
+      "level": "easy",
+      "question": "חם : קר",
+      "options": ["גדול : קטן", "גדול : עצום", "ארוך : גבוה", "מהיר : חזק"],
+      "correct_index": 0,
+      "explanation": "חם הוא ההפך של קר. התשובה הנכונה היא גדול : קטן — אותה מערכת יחסים של הפכים."
+    },
+    {
+      "id": "hv_002",
+      "type": "sentence_completion",
+      "subject": "hebrew_verbal",
+      "level": "easy",
+      "question": "הוא התנהג ב_______, מבלי לחשוב על השלכות מעשיו.",
+      "options": ["פזיזות", "עקביות", "מתינות", "תבונה"],
+      "correct_index": 0,
+      "explanation": "פזיזות מתארת פעולה ללא מחשבה מוקדמת, בדיוק כפי שמתואר במשפט."
+    },
+    {
+      "id": "en_001",
+      "type": "sentence_completion",
+      "subject": "english",
+      "level": "easy",
+      "question": "Despite the storm, the hikers remained _______ and continued toward the summit.",
+      "options": ["undeterred", "exhausted", "hesitant", "reluctant"],
+      "correct_index": 0,
+      "explanation": "המילה undeterred (בלתי מורתע) מתאימה להקשר שבו המטיילים ממשיכים למרות הסערה."
+    },
+    {
+      "id": "q_001",
+      "type": "word_problem",
+      "subject": "quantitative",
+      "level": "easy",
+      "question": "בכיתה יש 30 תלמידים. 40% מהם בנות. כמה בנים יש בכיתה?",
+      "options": ["18", "12", "15", "20"],
+      "correct_index": 0,
+      "explanation": "40% בנות = 12 בנות. לכן 30 − 12 = 18 בנים."
+    }
+  ]
+}

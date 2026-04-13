@@ -1,0 +1,40 @@
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+*.iml
+
+# Android
+android/.gradle
+android/local.properties
+android/key.properties
+android/app/google-services.json
+android/app/google-services.json.bak
+android/app/src/main/assets/flutter_assets/
+
+# iOS
+ios/.symlinks/
+ios/Flutter/.last_build_id
+ios/Pods/
+ios/Runner.xcworkspace/
+ios/*.env
+
+# Hive generated TypeAdapters
+lib/**/*.g.dart
+
+# IDEs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
